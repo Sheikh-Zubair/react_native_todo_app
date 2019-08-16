@@ -7,14 +7,7 @@
  */
 
 import React, {Fragment} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {StyleSheet, ScrollView, View, Text, StatusBar} from 'react-native';
 
 import {
   Header,
@@ -28,7 +21,7 @@ const App = () => {
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
+      <View>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
@@ -67,7 +60,7 @@ const App = () => {
             <LearnMoreLinks />
           </View>
         </ScrollView>
-      </SafeAreaView>
+      </View>
     </Fragment>
   );
 };
