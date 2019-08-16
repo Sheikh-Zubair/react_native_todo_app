@@ -1,11 +1,13 @@
 import {createAppContainer, createStackNavigator} from 'react-navigation';
 import {fromRight} from 'react-navigation-transitions';
-import NewList from '../containers/NewList';
+import NewListTitle from '../containers/NewList/NewListTitle';
+import NewListEdit from '../containers/NewList/NewListEdit';
 
 const NewListNavigator = createAppContainer(
   createStackNavigator(
     {
-      NewList,
+      NewListTitle,
+      NewListEdit,
     },
     {
       headerMode: 'none',

@@ -5,7 +5,7 @@ import ListItemWithIcon from '../../component/common/ListItemWithIcon';
 import withRouter from '../../HOC/common/listItemWithRouter';
 
 // route
-import {BOARDING, NEW_LIST} from '../../constants';
+import {BOARDING, NEW_LIST_NAV} from '../../constants';
 
 class Boarding extends Component {
   render() {
@@ -16,7 +16,7 @@ class Boarding extends Component {
           {...this.props}
           item="New List"
           icon_name="plus"
-          location={NEW_LIST}
+          location={NEW_LIST_NAV}
         />
         <ListItemWithRouter
           {...this.props}
