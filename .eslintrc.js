@@ -3,20 +3,21 @@ module.exports = {
   parser: 'babel-eslint',
   env: {
     jest: true,
-    node: true
+    node: true,
   },
 
   rules: {
     'global-require': 0,
-    'editor.formatOnSave': true,
+    'editor.formatOnSave': 'off',
+    'space-in-brackets': ['error', 'always'],
     'react/jsx-filename-extension': [
       1,
       {
-        extensions: ['.js', '.jsx']
-      }
+        extensions: ['.js', '.jsx'],
+      },
     ],
     '[javascript]': {
-      'editor.formatOnSave': true
+      'editor.formatOnSave': 'off',
     },
     'import/prefer-default-export': 'off',
     'react/destructuring-assignment': 'off',
@@ -25,8 +26,8 @@ module.exports = {
       {
         trailingComma: 'es5',
         singleQuote: true,
-        printWidth: 100
-      }
+        printWidth: 100,
+      },
     ],
     'no-use-before-define': 'off',
     'react/prop-types': 'off',
@@ -45,13 +46,13 @@ module.exports = {
           'shouldComponentUpdate',
           'componentWillUpdate',
           'componentDidUpdate',
-          'componentWillUnmount'
-        ]
-      }
-    ]
+          'componentWillUnmount',
+        ],
+      },
+    ],
   },
   globals: {
-    fetch: false
+    fetch: false,
   },
-  plugins: ['prettier']
+  plugins: ['prettier'],
 };
