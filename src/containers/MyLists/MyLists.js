@@ -12,7 +12,6 @@ import { Screen } from '../../component/common/Screen';
 import { Heading } from '../../component/common/Heading';
 
 const MyLists = ({ myListReducer: { Lists }, navigation: { navigate }, inputChange }) => {
-  console.log(Lists.length, Lists);
   return (
     <Screen>
       <View key="header">
