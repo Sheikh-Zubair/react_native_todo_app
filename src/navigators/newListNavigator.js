@@ -6,8 +6,8 @@ import NewListEdit from '../containers/NewList/NewListEdit';
 const NewListNavigator = createAppContainer(
   createStackNavigator(
     {
-      NewListTitle,
       NewListEdit,
+      NewListTitle,
     },
     {
       headerMode: 'none',

@@ -1,5 +1,5 @@
 const ListInitialState = {
-  listHeading: 'New List',
+  listHeading: '',
   listItem: [],
 };
 // { title: 'Item 1', isDone: false }

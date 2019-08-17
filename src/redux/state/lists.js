@@ -1,5 +1,5 @@
-import { ListInitialState } from './lisInitialState';
+// import { ListInitialState } from './lisInitialState';
 
-const Lists = [ListInitialState];
+const Lists = [];
 
 export { Lists };

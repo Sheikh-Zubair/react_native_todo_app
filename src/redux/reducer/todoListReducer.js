@@ -3,11 +3,11 @@ import {
   LIST_ITEM_CHECKED,
   ADD_ITEM_TO_LIST,
   LOAD_LIST,
-  CLEAR_REDUCER,
+  LISTS_ADDED_SUCCESS,
 } from '../../constants';
 import { ListInitialState } from '../state';
 
-export default (state = { ...ListInitialState }, { type, payload }) => {
+export default (state = JSON.parse(JSON.stringify(ListInitialState)), { type, payload }) => {
   switch (type) {
     case LIST_HEADING_CHANGE:
       return { ...state, listHeading: payload };
@@ -17,7 +17,7 @@ export default (state = { ...ListInitialState }, { type, payload }) => {
       return { ...state, listItem: payload };
     case LOAD_LIST:
       return { ...payload };
-    case CLEAR_REDUCER:
+    case LISTS_ADDED_SUCCESS:
       return { ...ListInitialState };
     default:
       return state;
