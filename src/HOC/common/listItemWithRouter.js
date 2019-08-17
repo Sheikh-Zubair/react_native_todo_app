@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 const withRouter = Component => {
   return props => {
     const {
-      navigation: {navigate},
+      navigation: { navigate },
       location,
     } = props;
     return (

@@ -1,23 +1,24 @@
+/* eslint-disable no-shadow */
 import React from 'react';
-import {View} from 'react-native';
-import {connect} from 'react-redux';
-import {Button} from 'react-native-elements';
+import { View } from 'react-native';
+import { connect } from 'react-redux';
+import { Button } from 'react-native-elements';
 
-import {inputChange} from '../../redux/actions';
-import {LIST_HEADING_CHANGE, NEW_LIST_EDIT} from '../../constants';
-import {Screen} from '../../component/common/Screen';
-import {Heading} from '../../component/common/Heading';
-import {Input} from '../../component/common/Input';
+import { inputChange } from '../../redux/actions';
+import { LIST_HEADING_CHANGE, NEW_LIST_EDIT } from '../../constants';
+import { Screen } from '../../component/common/Screen';
+import { Heading } from '../../component/common/Heading';
+import { Input } from '../../component/common/Input';
 
 const NewListTitle = ({
-  todoListReducer: {listHeading},
+  todoListReducer: { listHeading },
   inputChange,
-  navigation: {navigate},
+  navigation: { navigate },
 }) => {
   return (
     <Screen>
       <View key="header" />
-      <View key="content" style={{marginTop: 100}}>
+      <View key="content" style={{ marginTop: 100 }}>
         <Heading>Enter List Title</Heading>
         <Input
           value={listHeading}
@@ -25,11 +26,10 @@ const NewListTitle = ({
             inputChange(LIST_HEADING_CHANGE, text);
           }}
         />
-        <View style={{marginTop: 30}}>
+        <View style={{ marginTop: 30 }}>
           <Button
             title="Next"
             type="outline"
-            raised
             disabled={!listHeading}
             onPress={() => navigate(NEW_LIST_EDIT)}
           />
@@ -40,11 +40,11 @@ const NewListTitle = ({
   );
 };
 
-const mapStateToProps = ({todoListReducer}) => {
-  return {todoListReducer};
+const mapStateToProps = ({ todoListReducer }) => {
+  return { todoListReducer };
 };
 
 export default connect(
   mapStateToProps,
-  {inputChange},
+  { inputChange },
 )(NewListTitle);

@@ -1,13 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import {
-  StyleSheet,
-  TextInput,
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import { StyleSheet, TextInput, View, Text, Image, TouchableOpacity } from 'react-native';
 
 const Input = ({
   textSize,
@@ -34,7 +27,7 @@ const Input = ({
             textSize || padding
               ? [
                   styles.defaulttext,
-                  textSize ? {fontSize: textSize} : '',
+                  textSize ? { fontSize: textSize } : '',
                   padding
                     ? {
                         paddingLeft: padding,
@@ -115,4 +108,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export {Input};
+export { Input };

@@ -1,6 +1,7 @@
+/* eslint-disable react/state-in-constructor */
 /* eslint-disable no-shadow */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { Button } from 'react-native-elements';
@@ -8,37 +9,43 @@ import { Button } from 'react-native-elements';
 import { inputChange } from '../../redux/actions';
 import { LIST_HEADING_CHANGE, BOARDING } from '../../constants';
 import { Screen } from '../../component/common/Screen';
-import { Heading } from '../../component/common/Heading';
-import { Input } from '../../component/common/Input';
+import { EditableHeader } from '../../component/common/EditableHeader';
 
-const NewListEdit = ({ todoListReducer, inputChange, navigation: { navigate } }) => {
-  const { listHeading } = todoListReducer;
-  return (
-    <Screen>
-      <View key="header">
-        <Heading>{listHeading || 'Enter List Title'}</Heading>
-      </View>
-      <View key="content">
-        <Input
-          value={listHeading}
-          onChangeText={text => {
-            inputChange(LIST_HEADING_CHANGE, text);
-          }}
-        />
-        <View style={{ marginTop: 30 }}>
+class NewListEdit extends Component {
+  state = { editing: false };
+
+  render() {
+    const {
+      todoListReducer,
+      inputChange,
+      navigation: { navigate },
+    } = this.props;
+    const { listHeading } = todoListReducer;
+    const { editing } = this.state;
+    return (
+      <Screen>
+        <View key="header">
+          <EditableHeader
+            heading={listHeading}
+            isEditing={editing}
+            onEditing={text => inputChange(LIST_HEADING_CHANGE, text)}
+            onEdit={() => this.setState({ editing: true })}
+            onSave={() => this.setState({ editing: false })}
+          />
+        </View>
+        <View key="content" />
+        <View key="footer">
           <Button
-            title="Next"
+            title="Save"
             type="outline"
-            raised
             disabled={!listHeading}
             onPress={() => navigate(BOARDING)}
           />
         </View>
-      </View>
-      <View key="footer" />
-    </Screen>
-  );
-};
+      </Screen>
+    );
+  }
+}
 
 const mapStateToProps = ({ todoListReducer }) => ({ todoListReducer });
 
