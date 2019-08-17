@@ -3,6 +3,7 @@ import { fromRight } from 'react-navigation-transitions';
 import Boarding from '../containers/Boarding';
 import NewListNavigator from './newListNavigator';
 import MyLists from '../containers/MyLists/MyLists';
+import About from '../containers/About/About';
 
 const AppContainer = createAppContainer(
   createStackNavigator(
@@ -10,6 +11,7 @@ const AppContainer = createAppContainer(
       Boarding,
       NewListNavigator,
       MyLists,
+      About,
     },
     {
       initialRouteName: 'Boarding',

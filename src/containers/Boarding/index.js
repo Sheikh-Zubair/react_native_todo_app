@@ -9,7 +9,7 @@ import withRouter from '../../HOC/common/listItemWithRouter';
 import { inputChange } from '../../redux/actions';
 
 // route
-import { BOARDING, MY_LISTS, FETCH_LISTS, NEW_LIST_TITLE } from '../../constants';
+import { MY_LISTS, FETCH_LISTS, NEW_LIST_TITLE, ABOUT } from '../../constants';
 
 class Boarding extends Component {
   componentDidMount() {
@@ -39,12 +39,7 @@ class Boarding extends Component {
           icon_name="th-list"
           location={MY_LISTS}
         />
-        <ListItemWithRouter
-          {...this.props}
-          item="About"
-          icon_name="info-circle"
-          location={BOARDING}
-        />
+        <ListItemWithRouter {...this.props} item="About" icon_name="info-circle" location={ABOUT} />
       </BoardingList>
     );
   }
