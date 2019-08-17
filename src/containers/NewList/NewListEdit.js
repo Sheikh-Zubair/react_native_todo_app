@@ -11,11 +11,7 @@ import { Screen } from '../../component/common/Screen';
 import { Heading } from '../../component/common/Heading';
 import { Input } from '../../component/common/Input';
 
-const NewListEdit = ({
-  todoListReducer,
-  inputChange,
-  navigation: { navigate },
-}) => {
+const NewListEdit = ({ todoListReducer, inputChange, navigation: { navigate } }) => {
   const { listHeading } = todoListReducer;
   return (
     <Screen>
@@ -25,7 +21,7 @@ const NewListEdit = ({
       <View key="content">
         <Input
           value={listHeading}
-          onChangeText={(text) => {
+          onChangeText={text => {
             inputChange(LIST_HEADING_CHANGE, text);
           }}
         />
